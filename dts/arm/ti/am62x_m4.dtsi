@@ -39,9 +39,19 @@
 		#clock-cells = <0>;
 	};
 
-	mbox0: mailbox0@29000000 {
+	/* mbox0: mailbox0@29000000 {
 		compatible = "ti,omap-mailbox";
 		reg = <0x29000000 0x200>;
+		interrupts = <50 4>;
+		interrupt-parent = <&nvic>;
+		usr-id = <2>;
+		#mbox-cells = <1>;
+	}; */
+
+	/* Mailbox address translated from 0x29000000 to 0xA9000000 */
+	mbox0: mailbox0@A9000000 {
+		compatible = "ti,omap-mailbox";
+		reg = <0xA9000000 0x200>;
 		interrupts = <50 4>;
 		interrupt-parent = <&nvic>;
 		usr-id = <2>;

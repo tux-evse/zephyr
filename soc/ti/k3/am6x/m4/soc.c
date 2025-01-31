@@ -21,7 +21,13 @@ static struct address_trans_region_config am6x_region_config[] = {
 	{
 		.system_addr = 0x0u,
 		.local_addr = 0x80000000u,
-		.size = address_trans_region_size_512M,
+		//.size = address_trans_region_size_512M,
+		.size = address_trans_region_size_256M,
+	},
+	{
+		.system_addr = 0x90000000u,
+		.local_addr = 0x90000000u,
+		.size = address_trans_region_size_256M,
 	},
 	{
 		.local_addr = 0xA0000000u,
