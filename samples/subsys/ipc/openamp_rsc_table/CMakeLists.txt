@@ -10,4 +10,4 @@ project(openamp_rsc_table_remote)
 
 target_include_directories(app PRIVATE ${LIBMETAL_INCLUDE_DIR} ${OPENAMP_INCLUDE_DIR} ${PLATFORM_DIR})
 
-target_sources(app PRIVATE src/main_remote.c)
+target_sources(app PRIVATE src/main_remote.c src/pb_codec/nanopb/pb_common.c src/pb_codec/nanopb/pb_decode.c src/pb_codec/high_to_low.pb.c)

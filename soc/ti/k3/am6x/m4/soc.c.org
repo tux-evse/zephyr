@@ -21,12 +21,7 @@ static struct address_trans_region_config am6x_region_config[] = {
 	{
 		.system_addr = 0x0u,
 		.local_addr = 0x80000000u,
-		.size = address_trans_region_size_256M,
-	},
-	{
-		.system_addr = 0x90000000u,
-		.local_addr = 0x90000000u,
-		.size = address_trans_region_size_256M,
+		.size = address_trans_region_size_512M,
 	},
 	{
 		.local_addr = 0xA0000000u,
@@ -42,13 +37,12 @@ static struct address_trans_region_config am6x_region_config[] = {
 		.local_addr = 0x60000000u,
 		.system_addr = 0x60000000u,
 		.size = address_trans_region_size_512M,
-	}
+	},
 
 /*
  * Add regions here if you want to map more memory.
  */
 };
-
 
 static void am6x_mmr_unlock(void)
 {
