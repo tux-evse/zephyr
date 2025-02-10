@@ -33,8 +33,7 @@ extern char ram_console_buf[];
 
 #define __resource Z_GENERIC_SECTION(.resource_table)
 
-//static struct fw_resource_table __resource resource_table = {
-struct fw_resource_table __resource resource_table = {
+static struct fw_resource_table __resource resource_table = {
 	.hdr = {
 		.ver = 1,
 		.num = RSC_TABLE_NUM_ENTRY,
