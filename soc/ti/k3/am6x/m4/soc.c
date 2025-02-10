@@ -10,8 +10,8 @@
 #include <zephyr/init.h>
 #include <soc.h>
 
-#define ADDR_TRANSLATE_RAT_BASE_ADDR		(0x044200000u)
-#define PINCTRL_BASE_ADDR			(0x4080000u)
+#define ADDR_TRANSLATE_RAT_BASE_ADDR		(0x44200000u)
+#define PINCTRL_BASE_ADDR			(0x04080000u)
 #define KICK0_UNLOCK_VAL			(0x68EF3490U)
 #define KICK1_UNLOCK_VAL			(0xD172BC5AU)
 #define CSL_MCU_PADCONFIG_LOCK0_KICK0_OFFSET	(0x1008)
@@ -19,30 +19,14 @@
 
 static struct address_trans_region_config am6x_region_config[] = {
 	{
-		.system_addr = 0x0u,
-		.local_addr = 0x80000000u,
-		//.size = address_trans_region_size_512M,
-		.size = address_trans_region_size_256M,
+		.system_addr = 0x29000000u,
+		.local_addr =  0xb0000000u,
+		.size = address_trans_region_size_4K,
 	},
 	{
-		.system_addr = 0x90000000u,
-		.local_addr = 0x90000000u,
-		.size = address_trans_region_size_256M,
-	},
-	{
-		.local_addr = 0xA0000000u,
-		.system_addr = 0x20000000u,
-		.size = address_trans_region_size_512M,
-	},
-	{
-		.local_addr = 0xC0000000u,
-		.system_addr = 0x40000000u,
-		.size = address_trans_region_size_512M,
-	},
-	{
-		.local_addr = 0x60000000u,
-		.system_addr = 0x60000000u,
-		.size = address_trans_region_size_512M,
+		.system_addr = 0x00000000u,
+		.local_addr =  0xc0000000u,
+		.size = address_trans_region_size_1G,
 	},
 
 /*
