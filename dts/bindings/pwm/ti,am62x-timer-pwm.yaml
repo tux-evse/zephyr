@@ -1,0 +1,31 @@
+# Copyright 2025
+# SPDX-License-Identifier: Apache-2.0
+
+description: TI AM62x Timer PWM Controller
+
+compatible: "ti,am62x-timer-pwm"
+
+include: [pwm-controller.yaml, base.yaml, pinctrl-device.yaml]
+
+properties:
+  pinctrl-0:
+    required: true
+  reg:
+    description: Memory address of the timer
+    required: true
+  clock-frequency:
+    type: int
+    description: Reference to the clock frequency
+    required: true
+  clock-prescaler:
+    type: int
+    description: Reference to the clock prescaler
+    required: true
+
+  "#pwm-cells":
+    const: 3
+
+pwm-cells:
+  - channel
+  - period
+  - flags
