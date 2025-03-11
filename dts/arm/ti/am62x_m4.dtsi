@@ -73,6 +73,16 @@
 		ngpios = <24>;
 		status = "disabled";
 	};
+
+	mcu_timer2_pwm0: pwm@4820000 {
+    	compatible = "ti,am62x-timer-pwm";
+    	reg = <0x04820000 0x400>;
+		clock-frequency = <DT_FREQ_M(25)>;
+		clock-prescaler = <1>;
+		status = "disabled";
+		#pwm-cells = <3>;
+	};
+
 };
 
 &nvic {
